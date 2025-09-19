@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSE(AI&ML)\CSE BS – WEB_A_THON | Event Page</title>
+  <style>
+    /* Background with RGMCET campus image (image #2), blurred */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('https://images.openai.com/thumbnails/url/NQ0l3Xicu1mSUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw42Lw5zdE_2sfQ0Sy0piahwzfU2MM7QDTXRdXc2M8vOcHUscPI0qAx0Kg3OC3ENCIl0LixP889zivKLD1QrBgDtZijV'); 
+      /* This is image #2 selection */
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      z-index: -1;
+      transform: scale(1.05);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+      transition: background-color 0.4s, color 0.4s;
+      color: #222;
+      position: relative;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(51, 51, 51, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav a, #mode-toggle {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      user-select: none;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      height: 2px;
+      width: 100%;
+      background-color: white;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    nav a:hover, #mode-toggle:hover {
+      color: #ccc;
+    }
+
+    /* Logo and title container */
+    .logo-container {
+      text-align: center;
+      margin-top: 100px; /* adjust to push it below nav */
+      margin-bottom: 40px;
+      z-index: 1;
+      position: relative;
+    }
+    .logo-container img {
+      width: 120px; /* adjust size */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .logo-container h1 {
+      font-size: 2.5rem;
+      margin: 20px 0 0 0;
+      line-height: 1.2;
+      color: #222;
+    }
+    body.dark-mode .logo-container h1 {
+      color: #eee;
+    }
+
+    section {
+      padding: 80px 20px 60px;
+      min-height: 80vh;
+      transition: background-color 0.4s, color 0.4s;
+      background-color: rgba(255, 255, 255, 0.75);
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      backdrop-filter: saturate(180%) blur(12px);
+      color: #222;
+      position: relative;
+      z-index: 1;
+    }
+
+    body.dark-mode {
+      color: #ffffff;
+    }
+    body.dark-mode section {
+      background-color: rgba(20, 20, 20, 0.85);
+      color: #eee;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+      backdrop-filter: saturate(180%) blur(15px);
+    }
+    body.dark-mode nav {
+      background-color: rgba(0, 0, 0, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    body.dark-mode nav a::after {
+      background-color: #fff;
+    }
+
+    #countdown {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a, #mode-toggle {
+        margin: 6px 0;
+      }
+      section {
+        margin: 15px 10px;
+        padding: 60px 15px 40px;
+      }
+      .logo-container h1 {
+        font-size: 2rem;
+      }
+      .logo-container img {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#resources">Resources</a>
+    <a href="#prizes">Prizes</a>
+    <a href="#contact">Contact</a>
+    <button id="mode-toggle">🌙</button>
+  </nav>
+
+  <div class="logo-container">
+    <img src="YOUR_LOGO_URL_HERE" alt="RGM College Logo">
+    <h1>
+      CSE(AI&ML)\CSE BS<br>
+      WEB_A_THON
+    </h1>
+  </div>
+
+  <section id="home">
+    <p>Welcome to our event page!</p>
+    <div id="countdown">Loading countdown...</div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Learn more about our mission and goals.</p>
+  </section>
+
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <p>Here is the event schedule.</p>
+  </section>
+
+  <section id="resources">
+    <h2>Resources</h2>
+    <p>Find useful materials and guides here.</p>
+  </section>
+
+  <section id="prizes">
+    <h2>Prizes</h2>
+    <p>Exciting prizes await the winners!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach out to us through this section.</p>
+  </section>
+
+  <script>
+    const modeToggle = document.getElementById("mode-toggle");
+    const bodyEl = document.body;
+
+    if (localStorage.getItem('mode') === 'dark') {
+      bodyEl.classList.add("dark-mode");
+      modeToggle.textContent = "☀️";
+    }
+
+    modeToggle.addEventListener("click", () => {
+      bodyEl.classList.toggle("dark-mode");
+      if (bodyEl.classList.contains("dark-mode")) {
+        modeToggle.textContent = "☀️";
+        localStorage.setItem('mode', 'dark');
+      } else {
+        modeToggle.textContent = "🌙";
+        localStorage.setItem('mode', 'light');
+      }
+    });
+
+    const countdownElement = document.getElementById("countdown");
+    const targetDate = new Date("2025-09-20T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "🎉 The event has started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
